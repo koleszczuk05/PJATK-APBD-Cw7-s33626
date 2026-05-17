@@ -1,6 +1,36 @@
-@PJATK_APBD_Cw7_s33626_HostAddress = http://localhost:5147
+@url = http://localhost:5147/api/pcs
 
-GET {{PJATK_APBD_Cw7_s33626_HostAddress}}/weatherforecast/
+### GetAll
+GET {{url}}
 Accept: application/json
 
-###
+### GetById
+GET {{url}}/1/components
+Accept: application/json
+
+### Create
+POST {{url}}
+Content-Type: application/json
+
+{
+  "name": "SuperNova Studio Workstation",
+  "weight": 14.2,
+  "warranty": 48,
+  "createdAt": "2026-05-17T23:50:00",
+  "stock": 3
+}
+
+### Update
+PUT {{url}}/1
+Content-Type: application/json
+
+{
+  "name": "Gaming Beast X - Upgraded",
+  "weight": 13.0,
+  "warranty": 36,
+  "createdAt": "2026-05-17T23:50:00",
+  "stock": 4
+}
+
+### Delete
+DELETE {{url}}/3
